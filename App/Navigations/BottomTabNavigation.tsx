@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react'
 import Doctors from '../Screen/Doctors/Doctors'
@@ -15,9 +15,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import TabIcon from './TabIcon';
 
 const ImagePaths = {
-  doctor: require("/Users/p3117877/Desktop/rntype/assets/TabSVGs/doctor.svg"),
-  pin: require("/Users/p3117877/Desktop/rntype/assets/TabSVGs/pin.svg"),
-  plus: require("/Users/p3117877/Desktop/rntype/assets/TabSVGs/plus.svg"),
+  doctor: require("../../assets/TabSVGs/doctor.png"),
+  pin: require("../../assets/TabSVGs/pin.png"),
+  plus: require("../../assets/TabSVGs/plus.png"),
 
 }
 
@@ -35,15 +35,16 @@ const TabNavigation = (props: Props) => {
         tabBarShowLabel: false,
         tabBarStyle: {
           padding: 5,
+          opacity:0.9,
 
 
-          position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
+          // position: 'absolute',
+          // bottom: 15,
+          // left: 20,
+          // right: 20,
           backgroundColor: '#fff',
           borderRadius: 15,
-          height: 100,
+          height: 70,
           ...styles.bottomNavBar
         },
 

@@ -4,7 +4,7 @@
     "slug": "rntype",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/favicon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -21,11 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff",
-        "googleMapsApiKey": "AIzaSyBK4u3VQs-tYTdbrq6LX2soSIX7mmpjYA0"
+        "googleMapsApiKey": ""
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Baylek to use your location."
+        }
+      ]
+    ]
   }
 }

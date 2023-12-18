@@ -1,16 +1,60 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import React, { useState, useEffect, useContext } from 'react'
+import Header from '../../components/Header'
+import { getDoctors } from '../../api/api'
+import Categories from '../../components/Categories'
+import { SelectedCardContext, UserLocationContext } from "../../Context/Contexts";
+import PlaceMarker from './PlaceMarker';
 
-type Props = {}
 
-const Maps = (props: Props) => {
+const Maps = () => {
+  // const [selectedCard, setSelectedCard] = useState('Consultation')
+  const {location, setLocation } = useContext(UserLocationContext);
+  const {selectedCard } = useContext(SelectedCardContext);
+  const [mapRegion, setmapRegion] = useState<any>({});
+
+ 
+  useEffect(() => {
+    if (location) {
+      setmapRegion({
+        latitude: 36.7323887, //location.coords.latitude,
+        longitude: 3.9579499,//location.coords.longitude,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.091,
+      })
+    }
+  }, [location])
+
   return (
-    <View>
-      <Text>Maps</Text>
+    <View style={styles.root}>
+      <Header style={{ flexDirection: 'row', position: 'absolute', top: 30, zIndex: 1000 }} />
+      <View style={{ position: 'absolute', top: 100, zIndex: 1000, }}>
+        <Categories  />
+      </View>
+
+      {location ?
+        <MapView
+
+          region={mapRegion}
+          showsUserLocation={true}
+          style={{ width: '100%', height: '100%' }}>
+          {getDoctors(selectedCard).map((item, index) => (
+            <PlaceMarker
+              latitude={item.geometry.coordinates[1]}
+              longitude={item.geometry.coordinates[0]}
+              key={index}
+            />
+          ))}
+        </MapView> : null}
     </View>
   )
 }
 
 export default Maps
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  root: {
+
+  }
+})

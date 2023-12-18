@@ -1,16 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react'
+import DoctorList from '../Doctors/DoctorList'
 
 type Props = {}
 
 const AddPage = (props: Props) => {
   return (
-    <View>
-      <Text>Add</Text>
-    </View>
+    <ScrollView style = {styles.root}>
+      {/* <DoctorList /> */}
+    </ScrollView>
   )
 }
 
 export default AddPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  root: {
+    backgroundColor:'transparent'
+  }
+})

@@ -2,19 +2,21 @@ import { Image, StyleSheet, Text, View, TextInput, Dimensions } from 'react-nati
 const { width, height } = Dimensions.get('window');
 import React from 'react'
 
-import {border_style} from '../styles/styles'
+import {border_style, colors} from '../styles/styles'
 
 
 
 
-type Props = {}
+type HeaderProps = {
+  style:{}
+}
 
-const Header = (props: Props) => {
+const Header = (props: HeaderProps) => {
   return (
-    <View style = {styles.header}>
+    <View style = {props.style}>
       <Image source={require('../../assets/favicon.png')} style = {styles.logo}/>
       <View style = {styles.searchBar}>
-        <TextInput placeholder='Find A Doctor' style = {styles.searchInput}/>
+        <TextInput placeholder='Find A Doctor' placeholderTextColor={colors.MUTED}  style = {styles.searchInput}/>
         <Image source={require('../../assets/searchIcon.png')} style={styles.searchIcon}
     />
       </View>
@@ -32,44 +34,37 @@ const styles = StyleSheet.create({
     marginTop:8
   },
   searchIcon:{
-    width:30,
-    height:30,
-    marginLeft:-55
+    width:20,
+    height:20,
+    marginLeft:-55,
+
   },
   searchInput:{
     backgroundColor:'#fff',
-    padding:25,
+    padding:12,
+    paddingLeft:25,
     borderRadius:35,
-    width:width * 0.72,
-    color:'#adadad',
-    fontSize:25
-    
-   
-
+    width:width * 0.70,
+    color: 'red',
+    fontSize:18,
+      shadowColor: "#f8c4ff",
+      shadowOffset: {
+        width: 0,
+        height: -5,
+    },
+      shadowOpacity: 0.2,
+      shadowRadius: 30.22,
+      elevation: 12,
+      borderWidth: 0
+  
+  
   },
   searchBar:{
     flexDirection: 'row',
-    
     alignItems: 'center',
-    
-    // backgroundColor: '#fff',
-    // borderWidth: 0.5,
-    // borderColor: '#000',
-    // height: 40,
-    // borderRadius: 5,
-    // margin: 10,
-
-  },
-  header:{
-    flexDirection: 'row',
-    marginTop:30,
-    marginLeft:20, 
   
-    
-    // backgroundColor:'gray',
-    // justifyContent: 'center',
-
-
-  }
+  },
+  
+ 
 
 })
