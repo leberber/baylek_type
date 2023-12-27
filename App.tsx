@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 // import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import TabNavigation from './App/Navigations/BottomTabNavigation';
 import { useEffect, useState } from 'react'
+import {colors} from '/Users/p3117877/Desktop/rntype/App/styles/styles';
 
 import * as Location from 'expo-location';
 import { 
@@ -31,6 +32,7 @@ export default function App() {
     })();
   }, []);
   return (
+    // <SafeAreaView style = {{flex:1}}>
     <View style={styles.container}>
 
       <SelectedCardContext.Provider value={{ selectedCard, setSelectedCard }}>
@@ -41,15 +43,16 @@ export default function App() {
       </UserLocationContext.Provider>
       </SelectedCardContext.Provider>
 
-
-
     </View>
+    // </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:colors.BG_LIGHT
+    
 
 
   },

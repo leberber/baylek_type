@@ -31,7 +31,7 @@ const Categories = () => {
             margin: 5,
             borderRadius: 15
           }} onPress={() => {
-            console.log(item, '-----')
+       
             setSelectedCard(item.type)
       
       

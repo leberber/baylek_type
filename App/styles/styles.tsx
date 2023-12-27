@@ -6,10 +6,13 @@ export const colors = {
     WHITE:'#fff',
     YELLOW:'#fabd07',
     DARK_GRAY:'#a1a09f',
-    MUTED:'rgba(54, 55, 56, 1)',
+    MUTED:'rgb(189, 190, 191)',
     PURPLE:'#A16CE6',
     PURPLE_LIGHT:'#EDE6F6',
-    BG_LIGHT:'#FAFAFA'
+    BG_LIGHT:'#FAFAFA',
+    GREEN_LIGHT: 'rgb(233, 251, 240)',
+    GREEN_MEDIUM: 'rgb(233, 251, 240)',
+
 }
 
 export const screen_style = { backgroundColor: colors.BG_LIGHT, flex: 1 }

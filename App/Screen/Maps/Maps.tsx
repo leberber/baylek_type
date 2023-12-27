@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Platform } from 'react-native'
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import React, { useState, useEffect, useContext } from 'react'
 import Header from '../../components/Header'
@@ -28,10 +28,15 @@ const Maps = () => {
 
   return (
     <View style={styles.root}>
-      <Header style={{ flexDirection: 'row', position: 'absolute', top: 30, zIndex: 1000 }} />
-      <View style={{ position: 'absolute', top: 100, zIndex: 1000, }}>
+      <View style = {{ position: 'absolute', zIndex: 1000,top:  (Platform.OS === 'ios') ? 50 : 30, }}>
+
+      <Header style={{ flexDirection: 'row' }} />
+      <View style={{  }}>
         <Categories  />
       </View>
+
+      </View>
+  
 
       {location ?
         <MapView

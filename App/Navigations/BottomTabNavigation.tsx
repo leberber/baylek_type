@@ -13,6 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
 import TabIcon from './TabIcon';
+import DoctorModal from './DoctorModalNavigation';
 
 const ImagePaths = {
   doctor: require("../../assets/TabSVGs/doctor.png"),
@@ -52,7 +53,7 @@ const TabNavigation = (props: Props) => {
 
       }}
     >
-      <Tab.Screen name="Doctors" component={Doctors}
+      <Tab.Screen name="Doctors" component={DoctorModal}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabIcon

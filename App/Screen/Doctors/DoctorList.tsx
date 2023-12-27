@@ -9,12 +9,10 @@ const { width, height } = Dimensions.get('window');
 
 
 type cardProps = {
-  doctorImage :any,
-  doctorName:string,
-  doctorType:string,
-  commune:string,
-
-
+  doctorImage: any,
+  doctorName: string,
+  doctorType: string,
+  commune: string,
 }
 
 
@@ -25,7 +23,7 @@ const DoctorList = (props:cardProps) => {
   return (
     <View style={styles.root}>
     
-        <Image source = {props.doctorImage}
+        <Image source={{ uri: `https://firebasestorage.googleapis.com/v0/b/baylek.appspot.com/o/${props.doctorImage}.png?alt=media` }}
          style = {styles.image} />
       <View style={styles.details}> 
         <Text style = {{ fontWeight: '500', fontSize:20}}>Dr. {props.doctorName}</Text>
@@ -47,20 +45,7 @@ const DoctorList = (props:cardProps) => {
 
           </View>
        
-          <View style = { styles.iconsrow}>
-          <View style={{flexDirection:'row',marginRight:8,  ...styles.navigateIconView}}>
-          <Image source = {require('/Users/p3117877/Desktop/rntype/assets/navigate.png')}
-         style = {styles.navigateIcon} />
-
-          <Text style = {{...styles.badge}}>Share</Text>
-
-          </View>
-          <View style = {styles.navigateIconView} >
-              <Image source = {require('/Users/p3117877/Desktop/rntype/assets/navigate.png')}
-              
-          style = {styles.navigateIcon} />
-           </View>
-          </View>
+    
         </View>
       </View>
     </View>
